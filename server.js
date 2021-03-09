@@ -15,11 +15,11 @@ app.set('views','views');
 app.set('view engine','ejs');
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', {home:'active'});
 });
 
 app.get('/productos',(req,res) => {
-    res.render('productos');
+    res.render('productos', {productos:'active'});
 });
 app.get('/productos', async (req, res) => {
     try {
