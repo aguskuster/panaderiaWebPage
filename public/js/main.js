@@ -10,3 +10,6 @@ image.forEach(play => play.addEventListener('click', () => {
 
 
 
+
+
+

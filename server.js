@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const bp = require('body-parser');
 const pool = require('./database');
+var active = 'active';
 
 
 app.use(express.static('public'));
@@ -14,12 +15,17 @@ app.use('/img', express.static(__dirname+'public/img'));
 app.set('views','views');
 app.set('view engine','ejs');
 
-app.get('/', (req, res) => {
-    res.render('index');
+app.get('/', (req, res) => { 
+    res.render('index',{
+        active: active
+    });
 });
 
 app.get('/productos',(req,res) => {
-    res.render('productos');
+  
+    res.render('productos', {
+        active: active
+    });
 });
 app.get('/productos', async (req, res) => {
     try {
